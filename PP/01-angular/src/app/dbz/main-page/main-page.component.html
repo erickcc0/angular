@@ -9,7 +9,8 @@
     </div>
 
     <div class="col">
-        <app-agregar ></app-agregar>
+        <app-agregar 
+        [nuevo]="nuevo" (onNewCharacter)="addNewCharacter( $event )"></app-agregar>
 
     </div>
 </div>
