@@ -1,0 +1,9 @@
+html , body{
+    height: 100%;
+}
+
+#sidebar{
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100px ;
+}
