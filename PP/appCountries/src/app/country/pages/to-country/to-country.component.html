@@ -1,0 +1,21 @@
+<h2>by Country</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+       <app-input-country> </app-input-country>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="error" class="alert alert-danger">
+  nothing was found with that word {{termino}}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+       <app-table-country [paises]='paises' ></app-table-country>
+
+    </div>
+</div>
