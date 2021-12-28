@@ -1,9 +1,13 @@
-<h2>by Country</h2>
+<h2>by {{title}}</h2>
 <hr>
 
 <div class="row">
     <div class="col">
-       <app-input-country> </app-input-country>
+       <app-input-country
+        (onEnter)="buscar( $event )"
+        (onDebounce)="sugerencias( $event )"
+        [title]="title"
+        > </app-input-country>
     </div>
 </div>
 

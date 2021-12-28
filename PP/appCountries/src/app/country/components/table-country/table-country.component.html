@@ -10,7 +10,7 @@
         <tr *ngFor="let country of paises; let i = index ">
             <td> {{i+1}} </td>
             <td><img class="small-flag" src="{{country.flags.svg}} "> </td>
-            <td>{{ country.name.common}}</td>
+            <td>{{country.capital}} - {{ country.name.common}}</td>
             <td> {{country.population | number}} </td>
             <td></td>
             <a [routerLink]="['/pais', country.altSpellings[0]]" routerLinkActive="router-link-active"  >see...</a>

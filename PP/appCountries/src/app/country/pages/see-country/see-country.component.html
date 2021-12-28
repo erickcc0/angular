@@ -1,1 +1,64 @@
-<p>see-country works!</p>
+<div class="alert alert-info" *ngIf="!params; else divPais" >
+    Espere por favor ...
+</div>
+
+<ng-template #divPais>
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{params.name.common}}</small> </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 mt-3">
+            <h5>Bandera</h5>
+            <img [src]="params.flags.png" alt="" class="img-thumbnail">
+        </div>
+        <div class="col p-3">
+            <h5>Informacion</h5>
+            <ul class="list-group ">
+                <li class="list-group-item mb-1"> <span> <strong>Nombre Original: </strong> </span> {{ params.altSpellings[2] }} </li>
+            
+                <li class="list-group-item mb-1"> <span> <strong>Poblacion: </strong> </span> {{ params.population | number }} </li>
+            
+                <li class="list-group-item mb-1"> <span> <strong>Region: </strong> </span> {{ params.region }} </li>
+            
+            
+            </ul>
+  
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-info me-2"> {{params.translations.ara.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.ces.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.cym.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.deu.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.est.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.fin.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.fra.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.hrv.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.hun.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.ita.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.jpn.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.kor.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.nld.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.per.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.pol.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.por.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.rus.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.slk.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.spa.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.swe.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.urd.common}} </span>
+            <span class="badge bg-info me-2"> {{params.translations.zho.common}} </span>
+        </div>
+    </div>
+
+    <pre class="mt-5">
+        {{params | json}}
+    </pre>
+
+</ng-template>

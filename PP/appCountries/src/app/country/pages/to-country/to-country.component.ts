@@ -13,12 +13,16 @@ export class ToCountryComponent {
   termino : string = '';
   error   : boolean = false;
   paises  : Country[] = [];
-
+  title   : string = 'Country'
+  
   constructor( private _countryService: PaisService) { }
 
-  buscar(){
+  buscar(termino:string){
+
+    this.termino = termino;
     this.error = false;
-    this._countryService.searchCountry(this.termino)
+
+    this._countryService.searchCountry(termino)
         .subscribe(resp=>{
           console.log(resp);
           this.paises = resp;
@@ -30,6 +34,10 @@ export class ToCountryComponent {
           
         });
     
+  }
+
+  sugerencias(termino:string){
+    this.error = false;
   }
 
 

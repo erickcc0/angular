@@ -1,1 +1,25 @@
-<p>to-capital works!</p>
+<h2>by {{title}}</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+       <app-input-country
+        (onEnter)="buscar( $event )"
+        (onDebounce)="sugerencias( $event )"
+        [title]="title"
+        > </app-input-country>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="error" class="alert alert-danger">
+  nothing was found with that word {{termino}}
+</div>
+
+<div *ngIf="capital.length > 0" class="row">
+    <div class="col">
+       <app-table-country [paises]='capital' ></app-table-country>
+
+    </div>
+</div>
